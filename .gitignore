@@ -1,0 +1,8 @@
+# python compiled files
+*.pyc
+
+# random files
+.DS_Store
+
+# coverage report
+.coverage
