@@ -8,16 +8,18 @@ class QuaternionTest(unittest.TestCase):
         self.a = Quaternion(1, 2, -5, 20)
         self.b = Quaternion(0, 4, 13, 2)
 
-    def set_components(self):
-        self.a.n = 2
-        # TODO improve this test (currently only tests
-        # the first elemnt raises an exception)
-        self.a.n_i = 0
-        self.a.n_j = 0
-        self.a.n_k = 0
-
     def test_read_only(self):
-        self.assertRaises(AttributeError, self.set_components)
+        with self.assertRaises(AttributeError):
+            self.a.n = 0
+
+        with self.assertRaises(AttributeError):
+            self.a.n_i = 0
+        
+        with self.assertRaises(AttributeError):
+            self.a.n_j = 0
+        
+        with self.assertRaises(AttributeError):
+            self.a.n_k = 0
 
     def test_add(self):
         a_plus_b = Quaternion(1, 6, 8, 22)
