@@ -1,6 +1,7 @@
+import math
+
 class Quaternion(object):
     def __init__(self, n, n_i, n_j, n_k):
-    # def __init__(self, n, n_i=n_i, n_j=n_j, n_k=n_k):
         self._n   = n
         self._n_i = n_i
         self._n_j = n_j
@@ -62,5 +63,5 @@ class Quaternion(object):
         return hash(self.__key())
 
     def __abs__(self):
-        self_abs = self.n**2 + self.n_i**2 + self.n_j**2 + self.n_k**2
+        self_abs = math.sqrt(self.n**2 + self.n_i**2 + self.n_j**2 + self.n_k**2)
         return self_abs
